@@ -1,19 +1,19 @@
-# Urlrog
+# Urlrog: URL Retrieval for Open Graph
 
-To start your Phoenix server:
+To start the Phoenix server:
 
   * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.setup`
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+  * Start Phoenix endpoint with `mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+Also, try running tests with `mix test`
 
-## Learn more
+## What you should know
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+- I did it in Phoenix.  Live view seemed like a good match for the requirements, so I used a live view.
+- No database. Why would this app need one?
+- Using GenServer as a background processor. No need for Redis or Sidekiq, start up a GenServer thread to do the webscraping when the application starts
+- Updates via PubSub. Any listening LiveView that is looking for the thumbnail for the requested URL will receive the update.
+- Using Application.get_env for test dependency injection, meaning we don't get slowdowns or errors from attempts to call HTTPoison in test.  This comes with a slight sacrifice to readability and click-through-ability, but is still pretty cool.  Another approach this would be to use (Gestalt)[https://hex.pm/packages/gestalt]
+- There are tests, ain't that great?

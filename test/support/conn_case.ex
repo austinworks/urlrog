@@ -22,7 +22,7 @@ defmodule Test.ConnCase do
       # Import conveniences for testing with connections
       import Plug.Conn
       import Phoenix.ConnTest
-      import UrlrogWeb.ConnCase
+      import Test.ConnCase
 
       alias UrlrogWeb.Router.Helpers, as: Routes
 

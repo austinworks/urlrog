@@ -14,6 +14,7 @@ config :urlrog, UrlrogWeb.Endpoint,
   pubsub_server: Urlrog.PubSub,
   live_view: [signing_salt: "UdrwkSLF"]
 
+config :urlrog, :image_processor, Urlrog.Lookup
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails

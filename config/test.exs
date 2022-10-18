@@ -15,6 +15,8 @@ config :urlrog, UrlrogWeb.Endpoint,
 # In test we don't send emails.
 config :urlrog, Urlrog.Mailer, adapter: Swoosh.Adapters.Test
 
+config :urlrog, :image_processor, Test.ExampleLookup
+
 # Print only warnings and errors during test
 config :logger, level: :warn
 

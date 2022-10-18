@@ -17,7 +17,7 @@ defmodule UrlrogWeb.Router do
   scope "/", UrlrogWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", SourceUrlLive, :index
     live "/source_urls", SourceUrlLive, :index
   end
 

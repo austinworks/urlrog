@@ -10,6 +10,9 @@ defmodule Urlrog.Application do
     children = [
       # Start the Telemetry supervisor
       UrlrogWeb.Telemetry,
+      # Start the URL lookup thread
+      Application.get_env(:urlrog, :image_processor),
+      # Urlrog.Lookup,
       # Start the PubSub system
       {Phoenix.PubSub, name: Urlrog.PubSub},
       # Start the Endpoint (http/https)

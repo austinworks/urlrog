@@ -21,7 +21,7 @@ defmodule Test.ChannelCase do
     quote do
       # Import conveniences for testing with channels
       import Phoenix.ChannelTest
-      import UrlrogWeb.ChannelCase
+      import Test.ChannelCase
 
       # The default endpoint for testing
       @endpoint UrlrogWeb.Endpoint
