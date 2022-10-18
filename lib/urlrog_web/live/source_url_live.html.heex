@@ -1,0 +1,7 @@
+<h1>OG Image Lookup Service</h1>
+<form phx-submit="fetchImage" id="query_form">
+  <input type="text" value={@source_url} name="query_url" data-testid="query_data_entry">
+  <input type="Submit" value="Look it up">
+</form>
+<p><%= @source_url %></p>
+<img src={@image_url} id="image_display">

@@ -7,9 +7,6 @@
 # General application configuration
 import Config
 
-config :urlrog,
-  ecto_repos: [Urlrog.Repo]
-
 # Configures the endpoint
 config :urlrog, UrlrogWeb.Endpoint,
   url: [host: "localhost"],
