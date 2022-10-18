@@ -1,3 +1,3 @@
 defmodule UrlrogWeb.PageViewTest do
-  use UrlrogWeb.ConnCase, async: true
+  use Test.ConnCase, async: true
 end

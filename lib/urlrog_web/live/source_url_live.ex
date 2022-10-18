@@ -10,16 +10,19 @@ defmodule UrlrogWeb.SourceUrlLive do
     {:ok,
      assign(socket, %{
        source_url: "",
-       image_url: ""
+       image_url: "",
+       image_url_description: ""
      })}
   end
 
   @impl true
   def handle_event("fetchImage", %{"query_url" => query_url}, socket) do
+    image_url = Urlrog.Lookup.og_image(query_url)
     {:noreply,
      assign(socket, %{
        source_url: query_url,
-       image_url: default_url()
+       image_url_description: image_url || "Not found",
+       image_url: image_url
      })}
   end
 end

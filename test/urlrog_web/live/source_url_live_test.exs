@@ -1,5 +1,5 @@
 defmodule UrlrogWeb.SourceUrlLiveTest do
-  use UrlrogWeb.ConnCase
+  use Test.ConnCase
 
   import Phoenix.LiveViewTest
 

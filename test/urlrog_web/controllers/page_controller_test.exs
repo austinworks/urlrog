@@ -1,5 +1,5 @@
 defmodule UrlrogWeb.PageControllerTest do
-  use UrlrogWeb.ConnCase
+  use Test.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")
